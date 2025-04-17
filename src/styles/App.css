@@ -1,0 +1,44 @@
+.hide {
+  display: none;
+}
+
+#result {
+  text-align: center;
+}
+
+#flip-container {
+  width: 200px;
+  height: 200px;
+}
+
+#flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#flip-inner.flip {
+  transform-style: preserve-3d;
+  animation: spin 0.75s 0s linear infinite;
+}
+
+#flip-front,
+#flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#flip-back {
+  transform: rotateY(180deg);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate3d(0, 1, 0, 0);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
